@@ -32,7 +32,7 @@ yarn-error.log*
 .Spotlight-V100
 .Trashes
 Icon
-
+.idea/workspace.xml
 
 # ----------------------------------------------------------------------
 # | Vim                                                                |
