@@ -34,7 +34,7 @@ const sellInValidation = (sellIn, price) => {
     return price;
 }
 
-exports.isTypeRegister = (name) => {
+const isTypeRegister = (name) => {
     let index = typesProducts.map(function (e) {
         return ((e.name).toLowerCase()).trim()
     }).indexOf(((name).toLowerCase()).trim());
@@ -51,7 +51,7 @@ exports.isTypeRegister = (name) => {
     }
 }
 
-exports.normalProduct = (sellIn, price) => {
+const normalProduct = (sellIn, price) => {
     if (price > 0) {
         price -= 1;
         if (sellIn < 0 && price > 0)
@@ -60,12 +60,12 @@ exports.normalProduct = (sellIn, price) => {
     return price;
 }
 
-exports.degradeSellIn = (sellIn) => {
+const degradeSellIn = (sellIn) => {
     sellIn -= 1;
     return sellIn;
 }
 
-exports.fullCoverage = (sellIn, price) => {
+const fullCoverage = (sellIn, price) => {
     if (price < 50) {
         price += 1;
         if (sellIn < 0 && price < 50) {
@@ -75,11 +75,11 @@ exports.fullCoverage = (sellIn, price) => {
     return price;
 }
 
-exports.megaCoverage = (sellIn, price) => {
+const megaCoverage = (sellIn, price) => {
     return 80;
 }
 
-exports.specialFullCoverage = (sellIn, price) => {
+const specialFullCoverage = (sellIn, price) => {
     if (price < 50) {
         price = sellInValidation(sellIn, price)
     }
@@ -89,7 +89,7 @@ exports.specialFullCoverage = (sellIn, price) => {
     return price;
 }
 
-exports.superSale =  (sellIn, price) => {
+const superSale =  (sellIn, price) => {
 
     if (price > 0) {
         price -= 2;
@@ -97,4 +97,15 @@ exports.superSale =  (sellIn, price) => {
     if (price < 0)
         price = 0;
     return price;
+}
+
+module.exports = {
+    superSale,
+    megaCoverage,
+    fullCoverage,
+    normalProduct,
+    isTypeRegister,
+    specialFullCoverage,
+    degradeSellIn
+
 }
