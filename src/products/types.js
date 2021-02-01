@@ -13,4 +13,5 @@ const define = (name, value) => {
 define("isTypeRegister", functions.isTypeRegister);
 define("normalProduct", functions.normalProduct);
 define("degradeSellIn", functions.degradeSellIn);
+define("fullCoverage", functions.fullCoverage);
 

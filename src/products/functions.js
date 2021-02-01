@@ -54,3 +54,12 @@ exports.degradeSellIn = (sellIn) => {
     return sellIn;
 }
 
+exports.fullCoverage =  (sellIn, price) => {
+    if (price < 50) {
+        price += 1;
+        if (sellIn < 0 && price < 50) {
+            price += 1
+        }
+    }
+    return price;
+}
