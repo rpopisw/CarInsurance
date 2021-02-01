@@ -88,3 +88,13 @@ exports.specialFullCoverage = (sellIn, price) => {
     }
     return price;
 }
+
+exports.superSale =  (sellIn, price) => {
+
+    if (price > 0) {
+        price -= 2;
+    }
+    if (price < 0)
+        price = 0;
+    return price;
+}
