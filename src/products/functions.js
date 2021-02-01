@@ -23,6 +23,17 @@ const typesProducts = [{
 }];
 
 
+const sellInValidation = (sellIn, price) => {
+    price += 1;
+    if (price < 50) {
+        if (sellIn < 11)
+            price += 1;
+        if (sellIn < 6)
+            price += 1;
+    }
+    return price;
+}
+
 exports.isTypeRegister = (name) => {
     let index = typesProducts.map(function (e) {
         return ((e.name).toLowerCase()).trim()
@@ -66,4 +77,14 @@ exports.fullCoverage = (sellIn, price) => {
 
 exports.megaCoverage = (sellIn, price) => {
     return 80;
+}
+
+exports.specialFullCoverage = (sellIn, price) => {
+    if (price < 50) {
+        price = sellInValidation(sellIn, price)
+    }
+    if (price < 0) {
+        price = 0
+    }
+    return price;
 }

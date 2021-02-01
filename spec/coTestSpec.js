@@ -28,4 +28,20 @@ describe("Co Test", () => {
         expect(products[0].price).equal(80);
     });
 
+    it("Special Full Coverage days <= 5", () => {
+        const coTest = new CarInsurance([ new Product("Special Full Coverage", 1, 48) ]);
+        const products = coTest.updatePrice();
+        expect(products[0].sellIn).equal(0);
+        expect(products[0].price).equal(51);
+    });
+
+    it("Special Full Coverage days between 6 and 10", () => {
+        const coTest = new CarInsurance([ new Product("Special Full Coverage", 10, 47) ]);
+        const products = coTest.updatePrice();
+        expect(products[0].sellIn).equal(9);
+        expect(products[0].price).equal(49);
+    });
+
+
+
 });
