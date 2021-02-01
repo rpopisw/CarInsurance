@@ -15,4 +15,4 @@ define("normalProduct", functions.normalProduct);
 define("degradeSellIn", functions.degradeSellIn);
 define("fullCoverage", functions.fullCoverage);
 define("megaCoverage", functions.megaCoverage);
-
+define("specialFullCoverage", functions.specialFullCoverage);
