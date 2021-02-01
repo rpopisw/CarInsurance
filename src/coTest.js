@@ -19,8 +19,7 @@ class CarInsurance {
             let isRegister = dictionary.isTypeRegister(product.name);
             product.price = dictionary[isRegister.function](product.sellIn, product.price);
 
-            if (isRegister.degrade)
-            {
+            if (isRegister.degrade) {
                 product.sellIn = dictionary.degradeSellIn(product.sellIn);
             }
 
