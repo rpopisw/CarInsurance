@@ -54,7 +54,7 @@ exports.degradeSellIn = (sellIn) => {
     return sellIn;
 }
 
-exports.fullCoverage =  (sellIn, price) => {
+exports.fullCoverage = (sellIn, price) => {
     if (price < 50) {
         price += 1;
         if (sellIn < 0 && price < 50) {
@@ -62,4 +62,8 @@ exports.fullCoverage =  (sellIn, price) => {
         }
     }
     return price;
+}
+
+exports.megaCoverage = (sellIn, price) => {
+    return 80;
 }
