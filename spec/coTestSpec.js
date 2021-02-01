@@ -6,10 +6,11 @@ const Product = coTest.Product;
 
 describe("Co Test", function() {
 
-  it("should foo", function() {
-    const coTest = new CarInsurance([ new Product("fixme", 0, 0) ]);
+  it("Normal Producto", function() {
+    const coTest = new CarInsurance([ new Product("Normal Product", -2, 6) ]);
     const products = coTest.updatePrice();
-    expect(products[0].name).equal("fixme");
+    expect(products[0].sellIn).equal(-3);
+    expect(products[0].price).equal(4);
   });
 
 });
