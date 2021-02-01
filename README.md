@@ -1,18 +1,8 @@
-# ComparaOnline Test Requirements Specification
+# ComparaOnline Test
 
-Hi, welcome to the Software Engineer CO Test. In this test we expect to see your approach to refactor a legacy code into a testeable, object oriented solution.
+* Node js version: 12.1
 
-### We will only consider your application if you submit your own repository with the proposed solution. Forks or pull requests to our repo will DISCARD your application.
-
-The code updates the price of products of our business unit, Car Insurance, based on rules explained bellow.
-
-Here you have a description of the products.
-
-- All Products have a `sellIn` value which denotes the number of days we have to sell the product.
-- All Products have a `price` value which denotes how much the product cost.
-- At the end of each day our system lowers both values for every product.
-
-Pretty simple, right? Well this is where it gets interesting:
+## Requirements
 
 - Once the sell by date has passed, `price` degrades twice as fast.
 - The `price` of a product is never negative.
@@ -37,41 +27,8 @@ legendary product and as such its `price` is 80 and it never alters.
 
 - On file `products_after_30_days.txt` you could see the behavior of the products in the period of 30 days. **The `Super Sale` product is not working properly. You have to implement it.**
 
-## Evaluation rules
-- Design an Object Oriented solution
-- The solution must be scalable, we expect to be able to add new products on the future
-- Meaningful git commits, we expect to see your solution approach as commit messages
-- We expect a Node.js (>6) codebase, otherwise you should provide a `Dockerfile` with all the required dependencies to run the required commands.
-- 100% code coverage, you should provide the report and the command to run the tests and get the coverage report.
-
 ### Required commands
+
+- `npm install`, It is necesary for install dependecies 
 - `npm run test`, should run the test suite and display the coverage report
 - `npm run after-30-days`, should display an output similar to `products_after_30_days.txt`
-
-You can use this code snipet as reference to implement the `after-30-days` script.
-
-```js
-const productsAtDayZero = [
-  new Product('Medium Coverage', 10, 20),
-  new Product('Full Coverage', 2, 0),
-  new Product('Low Coverage', 5, 7),
-  new Product('Mega Coverage', 0, 80),
-  new Product('Mega Coverage', -1, 80),
-  new Product('Special Full Coverage', 15, 20),
-  new Product('Special Full Coverage', 10, 49),
-  new Product('Special Full Coverage', 5, 49),
-  new Product('Super Sale', 3, 6),
-];
-
-const carInsurance = new CarInsurance(productsAtDayZero);
-const productPrinter = function (product) {
-  console.log(`${product.name}, ${product.sellIn}, ${product.price}`);
-};
-
-for (let i = 1; i <= 30; i += 1) {
-  console.log(`Day ${i}`);
-  console.log('name, sellIn, price');
-  carInsurance.updatePrice().forEach(productPrinter);
-  console.log('');
-}
-```
