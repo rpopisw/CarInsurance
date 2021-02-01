@@ -16,3 +16,4 @@ define("degradeSellIn", functions.degradeSellIn);
 define("fullCoverage", functions.fullCoverage);
 define("megaCoverage", functions.megaCoverage);
 define("specialFullCoverage", functions.specialFullCoverage);
+define("superSale", functions.superSale);

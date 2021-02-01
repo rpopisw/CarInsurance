@@ -42,6 +42,11 @@ describe("Co Test", () => {
         expect(products[0].price).equal(49);
     });
 
-
+    it("Super Sale", () => {
+        const coTest = new CarInsurance([ new Product("Super Sale", 5, 5) ]);
+        const products = coTest.updatePrice();
+        expect(products[0].sellIn).equal(4);
+        expect(products[0].price).equal(3);
+    });
 
 });
